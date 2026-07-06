@@ -1,0 +1,39 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    padding-top: 8rem;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ul {
+    list-style: none;
+}
+
+.main-content{
+    margin-left:25rem;
+    margin-top:0.5rem;
+    padding:3rem;
+    font-size: 1rem;
+    min-height:calc(100vh - 8rem);
+    background:#f4f6f9;
+}
+.main-content h1 {
+    font-size: 3rem;
+}
+.main-content p{
+    font-size: 1.5rem;
+}

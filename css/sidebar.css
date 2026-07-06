@@ -1,0 +1,73 @@
+.sidebar{
+    width:25rem;
+    height:calc(100vh - 8rem);
+    position:fixed;
+    top:8rem;
+    left:0;
+    background:#0d3b66;
+    overflow-y:auto;
+    box-shadow:.2rem 0 1rem rgba(0,0,0,.15);
+    padding:2rem 0;
+}
+
+.profile{
+    text-align:center;
+    padding:2rem;
+    border-bottom:.1rem solid rgba(255,255,255,.2);
+}
+
+.profile img{
+    width:10rem;
+    height:10rem;
+    border-radius:50%;
+    object-fit:cover;
+    border:.4rem solid #ffffff;
+}
+
+.profile h3{
+    color:#ffffff;
+    font-size:2rem;
+    margin-top:1.5rem;
+}
+
+.profile p{
+    color:#d6d6d6;
+    font-size:1.5rem;
+    margin-top:.6rem;
+}
+
+.sidebar nav{
+    margin-top:2rem;
+}
+
+.sidebar nav ul li{
+    margin:.7rem 1rem;
+}
+
+.sidebar nav ul li a{
+    display:flex;
+    align-items:center;
+    gap:1.5rem;
+    padding:1.4rem 1.8rem;
+    border-radius:1rem;
+    transition:.3s;
+    color:#ffffff;
+}
+
+.sidebar nav ul li a:hover{
+    background:#ff7a00;
+}
+
+.sidebar nav ul li a img{
+    width:3rem;
+    height:3rem;
+    object-fit:contain;
+}
+
+.sidebar nav ul li a span{
+    font-size:1.6rem;
+    font-weight:600;
+}
+
+
+
