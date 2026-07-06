@@ -17,6 +17,7 @@ if (!isset($base_url)) {
     <link rel="stylesheet" href="<?php echo $base_url; ?>css/form.css">
     <link rel="stylesheet" href="<?php echo $base_url; ?>css/tables.css">
     <link rel="stylesheet" href="<?php echo $base_url; ?>css/buttons.css">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>css/footer.css">
     <link rel="stylesheet" href="<?php echo $base_url; ?>css/settings.css">
 </head>
 <body>

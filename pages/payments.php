@@ -31,7 +31,7 @@ include "../includes/sidebar.php";
 
                 <tr>
                     <th>Payment ID</th>
-                    <th>Student</th>
+                    <th>Student Name</th>
                     <th>Amount</th>
                     <th>Method</th>
                     <th>Status</th>

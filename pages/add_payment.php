@@ -31,7 +31,7 @@ include "../includes/sidebar.php";
 
                 <div class="form-group">
 
-                    <label>Student</label>
+                    <label>Student Name</label>
 
                     <select name="student_id" required>
 

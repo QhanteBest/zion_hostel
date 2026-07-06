@@ -1,7 +1,7 @@
 <aside class="sidebar">
     <div class="profile">
         <img src="<?php echo $base_url; ?>images/Admin.jpg" alt="Administrator">
-        <h3>Welcome, Administrator</h3>
+        <h3>Frank Owusu</h3>
         <p>Hostel Administrator</p></div>
         <nav>
             <ul>
