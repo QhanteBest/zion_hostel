@@ -1,9 +1,9 @@
 <aside class="sidebar">
     <div class="profile">
-        <img src="<?php echo $base_url; ?>images/Admin.jpg" alt="Administrator">
-        <h3>Frank Owusu</h3>
+        <img src="<?php echo $base_url; ?>images/admins.png" alt="Administrator">
+        <h3>Gyasi Mustapha</h3>
         <p>Hostel Administrator</p></div>
-        <nav>
+        <nav> 
             <ul>
                 <li><a href="<?php echo $base_url; ?>index.php"><img src="<?php echo $base_url; ?>images/dashboard.png" alt="Dashboard">
                 <span>Dashboard</span></a></li>
@@ -12,7 +12,7 @@
                 <span>Students</span></a></li>
 
                 <li><a href="<?php echo $base_url; ?>pages/rooms.php"><img src="<?php echo $base_url; ?>images/rooms.png" alt="Rooms">
-                <span>Rooms</span></a></li>
+                <span>Room Management</span></a></li>
 
                 <li><a href="<?php echo $base_url; ?>pages/allocation.php"><img src="<?php echo $base_url; ?>images/allocation.png" alt="Allocation">
                 <span>Room Allocation</span></a></li>

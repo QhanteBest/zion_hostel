@@ -23,6 +23,7 @@ include "../includes/sidebar.php";
 
     </div>
 
+
     <div class="table-container">
 
         <table>
@@ -34,13 +35,16 @@ include "../includes/sidebar.php";
                     <th>Student Name</th>
                     <th>Amount</th>
                     <th>Method</th>
+                    <th>Date</th>
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
 
             </thead>
 
+
             <tbody>
+
 
             <?php
 
@@ -50,6 +54,7 @@ include "../includes/sidebar.php";
                 p.payment_id,
                 p.payment_amount,
                 p.payment_method,
+                p.payment_date,
                 p.payment_status,
                 s.student_fname,
                 s.student_lname
@@ -61,22 +66,29 @@ include "../includes/sidebar.php";
 
             ORDER BY p.payment_id ASC");
 
+
             while($row = mysqli_fetch_assoc($payments))
+
             {
 
             ?>
 
                 <tr>
 
-                    <td><?php echo $row['payment_id']; ?></td>
 
                     <td>
-
-                        <?php
-                        echo $row['student_fname']." ".$row['student_lname'];
-                        ?>
-
+                        <?php echo $row['payment_id']; ?>
                     </td>
+
+
+                    <td>
+                        <?php
+
+                        echo $row['student_fname']." ".$row['student_lname'];
+
+                        ?>
+                    </td>
+
 
                     <td>
 
@@ -84,11 +96,20 @@ include "../includes/sidebar.php";
 
                     </td>
 
+
                     <td>
 
                         <?php echo $row['payment_method']; ?>
 
                     </td>
+
+
+                    <td>
+
+                        <?php echo date("d M Y", strtotime($row['payment_date'])); ?>
+
+                    </td>
+
 
                     <td>
 
@@ -96,23 +117,31 @@ include "../includes/sidebar.php";
 
                     </td>
 
+
                     <td>
 
+
                         <a href="edit_payment.php?id=<?php echo $row['payment_id']; ?>" class="edit-btn">
+
                             Edit
+
                         </a>
+
 
                         <a href="delete_payment.php?id=<?php echo $row['payment_id']; ?>"
                         class="delete-btn"
                         onclick="return confirm('Delete this payment?');">
 
-                        Delete
+                            Delete
 
                         </a>
 
+
                     </td>
 
+
                 </tr>
+
 
             <?php
 
@@ -120,14 +149,21 @@ include "../includes/sidebar.php";
 
             ?>
 
+
             </tbody>
+
 
         </table>
 
+
     </div>
+
 
 </main>
 
+
 <?php
+
 include "../includes/footer.php";
+
 ?>
