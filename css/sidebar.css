@@ -1,73 +1,252 @@
+/* ==========================================
+   SIDEBAR
+========================================== */
+
 .sidebar{
+
     width:25rem;
     height:calc(100vh - 8rem);
     position:fixed;
     top:8rem;
     left:0;
+
     background:#0d3b66;
+
     overflow-y:auto;
-    box-shadow:.2rem 0 1rem rgba(0,0,0,.15);
+
+    box-shadow:.2rem 0 1rem rgba(0,0,0,.18);
+
     padding:2rem 0;
+
 }
 
+
+/* ==========================================
+   PROFILE
+========================================== */
+
 .profile{
+
     text-align:center;
+
     padding:2rem;
-    border-bottom:.1rem solid rgba(255,255,255,.2);
+
+    border-bottom:.1rem solid rgba(255,255,255,.15);
+
 }
 
 .profile img{
+
     width:10rem;
     height:10rem;
+
     border-radius:50%;
+
     object-fit:cover;
-    border:.4rem solid #ffffff;
+
+    border:.4rem solid #ff7a00;
+
+    box-shadow:0 .5rem 1.5rem rgba(0,0,0,.25);
+
 }
 
 .profile h3{
+
     color:#ffffff;
-    font-size:2rem;
+
+    font-size:2.2rem;
+
     margin-top:1.5rem;
+
+    font-weight:700;
+
 }
 
 .profile p{
-    color:#d6d6d6;
+
+    color:#d8e5f2;
+
     font-size:1.5rem;
+
     margin-top:.6rem;
+
 }
 
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
 .sidebar nav{
+
     margin-top:2rem;
+
+}
+
+.sidebar nav ul{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0;
+
 }
 
 .sidebar nav ul li{
-    margin:.7rem 1rem;
+
+    margin:.8rem 1rem;
+
 }
+
+
+/* ==========================================
+   MENU LINK
+========================================== */
 
 .sidebar nav ul li a{
+
     display:flex;
+
     align-items:center;
-    gap:1.5rem;
-    padding:1.4rem 1.8rem;
-    border-radius:1rem;
-    transition:.3s;
+
+    gap:1.8rem;
+
+    padding:1.5rem 2rem;
+
+    text-decoration:none;
+
     color:#ffffff;
+
+    border-radius:1.2rem;
+
+    transition:all .35s ease;
+
 }
 
-.sidebar nav ul li a:hover{
-    background:#ff7a00;
-}
 
-.sidebar nav ul li a img{
+/* ==========================================
+   ICONS
+========================================== */
+
+.sidebar nav ul li a i{
+
     width:3rem;
-    height:3rem;
-    object-fit:contain;
+
+    font-size:2.2rem;
+
+    text-align:center;
+
+    color:#ff7a00;
+
+    transition:all .35s ease;
+
 }
+
+
+/* ==========================================
+   MENU TEXT
+========================================== */
 
 .sidebar nav ul li a span{
-    font-size:1.6rem;
-    font-weight:600;
+
+    flex:1;
+
+    font-size:1.8rem;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+    transition:all .35s ease;
+
 }
 
 
+/* ==========================================
+   HOVER
+========================================== */
 
+.sidebar nav ul li a:hover{
+
+    background:#ff7a00;
+
+    color:#0d3b66;
+
+    transform:translateX(.6rem);
+
+    box-shadow:0 .6rem 1.6rem rgba(255,122,0,.45);
+
+}
+
+.sidebar nav ul li a:hover i{
+
+    color:#0d3b66;
+
+    transform:scale(1.2);
+
+}
+
+.sidebar nav ul li a:hover span{
+
+    color:#0d3b66;
+
+}
+
+
+/* ==========================================
+   ACTIVE MENU
+========================================== */
+
+.sidebar nav ul li.active a{
+
+    background:#ff7a00;
+
+    color:#0d3b66;
+
+    box-shadow:0 .6rem 1.6rem rgba(255,122,0,.45);
+
+}
+
+.sidebar nav ul li.active a i{
+
+    color:#0d3b66;
+
+}
+
+.sidebar nav ul li.active a span{
+
+    color:#0d3b66;
+
+}
+
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+.sidebar::-webkit-scrollbar{
+
+    width:.8rem;
+
+}
+
+.sidebar::-webkit-scrollbar-track{
+
+    background:#0b3155;
+
+}
+
+.sidebar::-webkit-scrollbar-thumb{
+
+    background: #ff7a00;
+
+    border-radius:5rem;
+
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover{
+
+    background:#ff7a00;
+
+}

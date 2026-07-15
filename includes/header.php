@@ -6,6 +6,7 @@ if (!isset($base_url)) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zion Hostel Management System</title>
@@ -23,7 +24,7 @@ if (!isset($base_url)) {
 <body>
     <header class="header">
         <div class="logo">
-            <img src="<?php echo $base_url; ?>images/logo.png" alt="Hostel Logo">
+            <img src="<?php echo $base_url; ?>images/logo.jpeg" alt="Hostel Logo">
         </div>
         <div class="system-name">
             <h1>Zion Hostel Management System</h1>

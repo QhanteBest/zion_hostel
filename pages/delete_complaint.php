@@ -1,5 +1,5 @@
 <?php
-
+include "../includes/auth.php";
 include "../includes/config.php";
 
 if (!isset($_GET['id'])) {

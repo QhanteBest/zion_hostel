@@ -2,8 +2,9 @@
 
 $base_url = "../";
 
-include "../includes/header.php";
+include "../includes/auth.php";
 include "../includes/config.php";
+include "../includes/header.php";
 include "../includes/sidebar.php";
 
 ?>
@@ -13,15 +14,45 @@ include "../includes/sidebar.php";
     <div class="page-title">
 
         <div>
+
             <h2>Receipts</h2>
+
             <p>Manage all hostel receipts.</p>
+
         </div>
 
         <a href="add_receipt.php" class="add-btn">
+
             + Generate Receipt
+
         </a>
 
     </div>
+
+
+    <!-- SEARCH BAR -->
+
+    <div class="search-container">
+
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+
+        <input
+            type="text"
+            id="search"
+            placeholder="Search by Receipt ID, Student or Payment ID..."
+        >
+
+        <button
+            type="button"
+            class="clear-search"
+            id="clearSearch">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+    </div>
+
 
     <div class="table-container">
 
@@ -30,6 +61,7 @@ include "../includes/sidebar.php";
             <thead>
 
                 <tr>
+
                     <th>Receipt ID</th>
                     <th>Student Name</th>
                     <th>Payment ID</th>
@@ -37,72 +69,12 @@ include "../includes/sidebar.php";
                     <th>Payment Date</th>
                     <th>Status</th>
                     <th>Action</th>
+
                 </tr>
 
             </thead>
 
-            <tbody>
-
-<?php
-
-$sql = mysqli_query($conn,
-
-"SELECT
-receipt.*,
-student.student_fname,
-student.student_lname
-
-FROM receipt
-
-JOIN student
-ON receipt.Student_ID = student.student_id
-
-ORDER BY Receipt_ID ASC");
-
-while($row = mysqli_fetch_assoc($sql))
-{
-
-?>
-
-<tr>
-
-    <td><?php echo $row['Receipt_ID']; ?></td>
-
-    <td>
-        <?php
-        echo $row['student_fname']." ".$row['student_lname'];
-        ?>
-    </td>
-
-    <td><?php echo $row['Payment_ID']; ?></td>
-
-    <td><?php echo $row['Receipt_Issue_Date']; ?></td>
-
-    <td><?php echo $row['Payment_Date']; ?></td>
-
-    <td><?php echo $row['Payment_Status']; ?></td>
-
-    <td>
-
-        <a href="edit_receipt.php?id=<?php echo $row['Receipt_ID']; ?>" class="edit-btn">
-            Edit
-        </a>
-
-        <a href="delete_receipt.php?id=<?php echo $row['Receipt_ID']; ?>"
-        class="delete-btn"
-        onclick="return confirm('Delete this receipt?');">
-
-        Delete
-
-        </a>
-
-    </td>
-
-</tr>
-
-<?php
-}
-?>
+            <tbody id="receiptTable">
 
             </tbody>
 
@@ -112,6 +84,10 @@ while($row = mysqli_fetch_assoc($sql))
 
 </main>
 
+<script src="<?php echo $base_url; ?>javaScript/receipts.js"></script>
+
 <?php
+
 include "../includes/footer.php";
+
 ?>

@@ -1,5 +1,5 @@
 <?php
-
+include "../includes/auth.php";
 include "../includes/config.php";
 
 $room_no = $_GET['id'];

@@ -2,126 +2,86 @@
 
 $base_url = "../";
 
-include "../includes/header.php";
+include "../includes/auth.php";
 include "../includes/config.php";
+include "../includes/header.php";
 include "../includes/sidebar.php";
 
 ?>
 
 <main class="main-content">
 
-<div class="page-title">
+    <div class="page-title">
 
-    <div>
+        <div>
 
-        <h2>Maintenance</h2>
+            <h2>Maintenance</h2>
 
-        <p>Manage hostel maintenance records.</p>
+            <p>Manage hostel maintenance records.</p>
+
+        </div>
+
+        <a href="add_maintenance.php" class="add-btn">
+
+            + Add Maintenance
+
+        </a>
 
     </div>
 
-    <a href="add_maintenance.php" class="add-btn">
+    <!-- SEARCH BAR -->
 
-        + Add Maintenance
+    <div class="search-container">
 
-    </a>
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
 
-</div>
+        <input
+            type="text"
+            id="search"
+            placeholder="Search by ID, Type, Room or Staff..."
+        >
 
-<div class="table-container">
+        <button
+            type="button"
+            class="clear-search"
+            id="clearSearch">
 
-<table>
+            <i class="fa-solid fa-xmark"></i>
 
-<thead>
+        </button>
 
-<tr>
+    </div>
 
-<th>Maintenance ID</th>
-<th>Type</th>
-<th>Status</th>
-<th>Room</th>
-<th>Assigned Staff</th>
-<th>Action</th>
+    <div class="table-container">
 
-</tr>
+        <table>
 
-</thead>
+            <thead>
 
-<tbody>
+                <tr>
 
-<?php
+                    <th>Maintenance ID</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                    <th>Room</th>
+                    <th>Assigned Staff</th>
+                    <th>Action</th>
 
-$maintenance = mysqli_query($conn,
+                </tr>
 
-"SELECT maintenance.*,
-room.room_no,
-staff.staff_fname,
-staff.staff_lname
+            </thead>
 
-FROM maintenance
+            <tbody id="maintenanceTable">
 
-JOIN room
-ON maintenance.Room_no = room.room_no
+            </tbody>
 
-JOIN staff
-ON maintenance.Staff_ID = staff.staff_id
+        </table>
 
-ORDER BY Maintenance_ID ASC");
-
-while($row=mysqli_fetch_assoc($maintenance))
-{
-
-?>
-
-<tr>
-
-<td><?php echo $row['Maintenance_ID']; ?></td>
-
-<td><?php echo $row['Maintenance_Type']; ?></td>
-
-<td><?php echo $row['Maintenance_Status']; ?></td>
-
-<td><?php echo $row['room_no']; ?></td>
-
-<td>
-
-<?php
-
-echo $row['staff_fname']." ".$row['staff_lname'];
-
-?>
-
-</td>
-
-<td>
-
-<a href="edit_maintenance.php?id=<?php echo $row['Maintenance_ID']; ?>" class="edit-btn">
-Edit
-</a>
-
-<a href="delete_maintenance.php?id=<?php echo $row['Maintenance_ID']; ?>"
-class="delete-btn"
-onclick="return confirm('Are you sure you want to delete this maintenance record?');">
-Delete
-</a>
-
-</td>
-
-</tr>
-
-<?php
-
-}
-
-?>
-
-</tbody>
-
-</table>
-
-</div>
+    </div>
 
 </main>
+
+<script src="<?php echo $base_url; ?>javaScript/maintenance.js"></script>
 
 <?php
 

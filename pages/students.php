@@ -1,64 +1,103 @@
 <?php
+
 $base_url = "../";
-include "../includes/header.php";
+
+include "../includes/auth.php";
 include "../includes/config.php";
+include "../includes/header.php";
 include "../includes/sidebar.php";
+
 ?>
+
 <main class="main-content">
+
     <div class="page-title">
+
         <div>
+
             <h2>Students</h2>
+
             <p>Manage all hostel students.</p>
+
         </div>
+
         <a href="add_student.php" class="add-btn">
+
             + Add Student
+
         </a>
+
     </div>
+
+
+    <!-- SEARCH BAR -->
+
+<div class="search-container">
+
+    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+
+    <input
+        type="text"
+        id="search"
+        placeholder="Search by Student ID, Name or Phone..."
+    >
+
+    <button
+        type="button"
+        class="clear-search"
+        id="clearSearch">
+
+        <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+</div>
+
+    <!-- ===============================
+         STUDENTS TABLE
+    ================================ -->
+
     <div class="table-container">
+
         <table>
+
             <thead>
+
                 <tr>
+
                     <th>Student ID</th>
+
                     <th>Full Name</th>
+
                     <th>Phone Number</th>
+
                     <th>Emergency Contact</th>
+
                     <th>Emergency Number</th>
+
                     <th>Action</th>
+
                 </tr>
+
             </thead>
-            <tbody>
-            <?php
-            $students = mysqli_query($conn, "SELECT * FROM student ORDER BY student_id ASC");
-            while($row = mysqli_fetch_assoc($students))
-            {
-            ?>
-                <tr>
-                    <td><?php echo $row['student_id']; ?></td>
-                    <td>
-                        <?php
-                        echo $row['student_fname'] . " " . $row['student_lname'];
-                        ?>
-                    </td>
-                    <td><?php echo $row['student_phone_number']; ?></td>
-                    <td><?php echo $row['emergency_contact_name']; ?></td>
-                    <td><?php echo $row['emergency_contact_number']; ?></td>
-                    <td>
-                        <a href="edit_student.php?id=<?php echo $row['student_id']; ?>" class="edit-btn">
-                            Edit
-                        </a>
-                        <a href="delete_student.php?id=<?php echo $row['student_id']; ?>"
-                        class="delete-btn"
-                        onclick="return confirm('Are you sure you want to delete this student?');">Delete</a>
-                        
-                    </td>
-                </tr>
-            <?php
-            }
-            ?>
+
+            <tbody id="studentTable">
+
+                <!-- Records will load here -->
+
             </tbody>
+
         </table>
+
     </div>
+
 </main>
+
+
+<script src="<?php echo $base_url; ?>javascript/students.js"></script>
+
 <?php
+
 include "../includes/footer.php";
+
 ?>

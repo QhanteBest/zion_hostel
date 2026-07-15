@@ -14,8 +14,8 @@
 }
 
 .logo img{
-    width:6rem;
-    height:6rem;
+    width:7rem;
+    height:7rem;
     object-fit:contain;
 }
 
@@ -30,8 +30,9 @@
 }
 
 .system-name p{
-    font-size:1.4rem;
-    color:#666;
+    font-size:1.6rem;
+    font-weight: bold;
+    color:#0d3b66;
     margin-top:.5rem;
 }
 
@@ -40,14 +41,15 @@
 }
 
 .header-right h3{
-    font-size:1.8rem;
+    font-size:2rem;
     color:#0d3b66;
 }
 
 .header-right p{
-    font-size:1.5rem;
+    font-size:1.4rem;
     margin:.5rem 0;
-    color:#555;
+    color:#0d3b66;
+    font-weight: bold;
 }
 
 #clock{
@@ -56,61 +58,214 @@
     font-weight:bold;
 }
 
+/* ==========================================
+   DASHBOARD TABLES
+========================================== */
 
-/* Dashboard Tables */
 .dashboard-grid{
+
     display:grid;
     grid-template-columns:repeat(2,1fr);
     gap:2rem;
     margin-top:3rem;
+
 }
+
+
+/* ==========================================
+   DASHBOARD BOX
+========================================== */
 
 .dashboard-box{
+
     background:#ffffff;
-    border-radius:1rem;
+    border-radius:2rem;
     padding:2rem;
-    box-shadow:0 .3rem 1rem rgba(0,0,0,.08);
+    box-shadow:0 .8rem 2rem rgba(0,0,0,.10);
+    border:.2rem solid #edf2f7;
+    overflow:hidden;
     margin-bottom:2rem;
+
 }
 
+
+/* ==========================================
+   BOX HEADER
+========================================== */
+
 .box-header{
-    border-bottom:.1rem solid #e5e5e5;
-    padding-bottom:1rem;
-    margin-bottom:1.5rem;
+
+    border-bottom:.2rem solid #ff7a00;
+    padding-bottom:1.2rem;
+    margin-bottom:2rem;
+
 }
 
 .box-header h2{
-    font-size:2rem;
+
+    font-size:2.2rem;
     color:#0d3b66;
+    font-weight:700;
+
 }
+
+
+/* ==========================================
+   TABLE
+========================================== */
 
 .dashboard-box table{
+
     width:100%;
     border-collapse:collapse;
+
 }
 
-.dashboard-box table th{
+
+/* ==========================================
+   TABLE HEAD
+========================================== */
+
+.dashboard-box table thead th{
+
+    background:#0d3b66;
+    color:#ffb703;
+    padding:1.5rem;
+    font-size:1.5rem;
+    font-weight:700;
+    text-align:left;
+
+}
+
+
+/* ==========================================
+   TABLE BODY
+========================================== */
+
+.dashboard-box table tbody td{
+
     background:#0d3b66;
     color:#ffffff;
-    padding:1.2rem;
-    text-align:left;
-    font-size:1.5rem;
+    padding:1.5rem;
+    font-size:1.45rem;
+    border-bottom:.1rem solid rgba(255,255,255,.12);
+
 }
 
-.dashboard-box table td{
-    padding:1.2rem;
-    border-bottom:.1rem solid #eeeeee;
-    font-size:1.4rem;
+
+/* ==========================================
+   EVEN ROW
+========================================== */
+
+.dashboard-box table tbody tr:nth-child(even) td{
+
+    background:#164a7d;
+
 }
 
-.dashboard-box table tr:hover{
-    background:#f7f9fc;
+
+/* ==========================================
+   HOVER
+========================================== */
+
+.dashboard-box table tbody tr:hover td{
+
+    background:#1d5d95;
+    transition:.3s;
+
 }
+
+
+/* ==========================================
+   LAST ROW
+========================================== */
+
+.dashboard-box table tbody tr:last-child td{
+
+    border-bottom:none;
+
+}
+
+
+/* ==========================================
+   STATUS BADGES
+========================================== */
+
+.status{
+
+    display:inline-block;
+    min-width:9rem;
+    text-align:center;
+    padding:.7rem 1.4rem;
+    border-radius:5rem;
+    font-size:1.2rem;
+    font-weight:700;
+    color:#ffffff;
+    box-shadow:0 .3rem .8rem rgba(0,0,0,.20);
+
+}
+
+.status-paid{
+
+    background:#28a745;
+
+}
+
+.status-pending{
+
+    background:#ff9800;
+
+}
+
+.status-open{
+
+    background:#0d6efd;
+
+}
+
+.status-progress{
+
+    background:#6f42c1;
+
+}
+
+.status-resolved{
+
+    background:#dc3545;
+
+}
+
+
+/* ==========================================
+   VISITOR TABLE
+========================================== */
 
 .visitor-box{
+
     margin-top:2rem;
+
 }
 
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+.dashboard-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.dashboard-box{
+
+overflow:auto;
+
+}
+
+}
 /* ==========================
    PAGE TITLE
 ========================== */
@@ -129,8 +284,9 @@
 }
 
 .page-title p{
-    font-size:1.5rem;
-    color:#666666;
+    font-weight: bold;
+    font-size:2.2rem;
+    color:#0d3b66;
 }
 
 /* ==========================

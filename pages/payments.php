@@ -2,8 +2,9 @@
 
 $base_url = "../";
 
-include "../includes/header.php";
+include "../includes/auth.php";
 include "../includes/config.php";
+include "../includes/header.php";
 include "../includes/sidebar.php";
 
 ?>
@@ -13,13 +14,42 @@ include "../includes/sidebar.php";
     <div class="page-title">
 
         <div>
+
             <h2>Payments</h2>
+
             <p>Manage hostel payment records.</p>
+
         </div>
 
         <a href="add_payment.php" class="add-btn">
+
             + Add Payment
+
         </a>
+
+    </div>
+
+
+    <!-- SEARCH BAR -->
+
+    <div class="search-container">
+
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+
+        <input
+            type="text"
+            id="search"
+            placeholder="Search by Payment ID, Student or Status..."
+        >
+
+        <button
+            type="button"
+            class="clear-search"
+            id="clearSearch">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
 
     </div>
 
@@ -31,6 +61,7 @@ include "../includes/sidebar.php";
             <thead>
 
                 <tr>
+
                     <th>Payment ID</th>
                     <th>Student Name</th>
                     <th>Amount</th>
@@ -38,129 +69,22 @@ include "../includes/sidebar.php";
                     <th>Date</th>
                     <th>Status</th>
                     <th>Action</th>
+
                 </tr>
 
             </thead>
 
-
-            <tbody>
-
-
-            <?php
-
-            $payments = mysqli_query($conn,
-
-            "SELECT
-                p.payment_id,
-                p.payment_amount,
-                p.payment_method,
-                p.payment_date,
-                p.payment_status,
-                s.student_fname,
-                s.student_lname
-
-            FROM payment p
-
-            JOIN student s
-            ON p.student_id = s.student_id
-
-            ORDER BY p.payment_id ASC");
-
-
-            while($row = mysqli_fetch_assoc($payments))
-
-            {
-
-            ?>
-
-                <tr>
-
-
-                    <td>
-                        <?php echo $row['payment_id']; ?>
-                    </td>
-
-
-                    <td>
-                        <?php
-
-                        echo $row['student_fname']." ".$row['student_lname'];
-
-                        ?>
-                    </td>
-
-
-                    <td>
-
-                        GH₵ <?php echo number_format($row['payment_amount'],2); ?>
-
-                    </td>
-
-
-                    <td>
-
-                        <?php echo $row['payment_method']; ?>
-
-                    </td>
-
-
-                    <td>
-
-                        <?php echo date("d M Y", strtotime($row['payment_date'])); ?>
-
-                    </td>
-
-
-                    <td>
-
-                        <?php echo $row['payment_status']; ?>
-
-                    </td>
-
-
-                    <td>
-
-
-                        <a href="edit_payment.php?id=<?php echo $row['payment_id']; ?>" class="edit-btn">
-
-                            Edit
-
-                        </a>
-
-
-                        <a href="delete_payment.php?id=<?php echo $row['payment_id']; ?>"
-                        class="delete-btn"
-                        onclick="return confirm('Delete this payment?');">
-
-                            Delete
-
-                        </a>
-
-
-                    </td>
-
-
-                </tr>
-
-
-            <?php
-
-            }
-
-            ?>
-
+            <tbody id="paymentTable">
 
             </tbody>
 
-
         </table>
-
 
     </div>
 
-
 </main>
 
+<script src="<?php echo $base_url; ?>javaScript/payments.js"></script>
 
 <?php
 

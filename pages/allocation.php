@@ -1,9 +1,12 @@
 <?php
+
 $base_url = "../";
 
+include "../includes/auth.php";
 include "../includes/header.php";
 include "../includes/config.php";
 include "../includes/sidebar.php";
+
 ?>
 
 <main class="main-content">
@@ -11,15 +14,45 @@ include "../includes/sidebar.php";
     <div class="page-title">
 
         <div>
+
             <h2>Room Allocation</h2>
+
             <p>Allocate hostel rooms to students.</p>
+
         </div>
 
         <a href="add_allocation.php" class="add-btn">
+
             + Allocate Room
+
         </a>
 
     </div>
+
+
+    <!-- SEARCH BAR -->
+
+    <div class="search-container">
+
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+
+        <input
+            type="text"
+            id="search"
+            placeholder="Search by Student, Room or Allocation ID..."
+        >
+
+        <button
+            type="button"
+            class="clear-search"
+            id="clearSearch">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+    </div>
+
 
     <div class="table-container">
 
@@ -28,76 +61,19 @@ include "../includes/sidebar.php";
             <thead>
 
                 <tr>
+
                     <th>Allocation ID</th>
                     <th>Student</th>
                     <th>Room</th>
                     <th>Start Date</th>
                     <th>End Date</th>
                     <th>Action</th>
+
                 </tr>
 
             </thead>
 
-            <tbody>
-
-            <?php
-
-            $allocations = mysqli_query($conn,
-
-            "SELECT
-                a.allocation_id,
-                a.room_no,
-                a.start_date,
-                a.end_date,
-                s.student_fname,
-                s.student_lname
-
-            FROM allocation a
-
-            JOIN student s
-            ON a.student_id = s.student_id
-
-            ORDER BY a.allocation_id ASC");
-
-            while($row = mysqli_fetch_assoc($allocations))
-            {
-            ?>
-
-                <tr>
-
-                    <td><?php echo $row['allocation_id']; ?></td>
-
-                    <td>
-                        <?php
-                        echo $row['student_fname'] . " " . $row['student_lname'];
-                        ?>
-                    </td>
-
-                    <td><?php echo $row['room_no']; ?></td>
-
-                    <td><?php echo $row['start_date']; ?></td>
-
-                    <td><?php echo $row['end_date']; ?></td>
-
-                    <td>
-
-                        <a href="edit_allocation.php?id=<?php echo $row['allocation_id']; ?>" class="edit-btn">
-                            Edit
-                        </a>
-
-                        <a href="delete_allocation.php?id=<?php echo $row['allocation_id']; ?>"
-                        class="delete-btn"
-                        onclick="return confirm('Delete this allocation?');">
-                        Delete
-                        </a>
-
-                    </td>
-
-                </tr>
-
-            <?php
-            }
-            ?>
+            <tbody id="allocationTable">
 
             </tbody>
 
@@ -107,6 +83,10 @@ include "../includes/sidebar.php";
 
 </main>
 
+<script src="<?php echo $base_url; ?>javaScript/allocation.js"></script>
+
 <?php
+
 include "../includes/footer.php";
+
 ?>

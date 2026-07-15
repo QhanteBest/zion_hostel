@@ -1,9 +1,9 @@
 <?php
 
 $base_url = "../";
-
-include "../includes/header.php";
+include "../includes/auth.php";
 include "../includes/config.php";
+include "../includes/header.php";
 include "../includes/sidebar.php";
 
 

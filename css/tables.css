@@ -1,73 +1,369 @@
+/* ==========================================
+   TABLE CONTAINER
+========================================== */
+
 .table-container{
+
     width:100%;
+
     overflow-x:auto;
-    background:#ffffff;
-    border-radius:1rem;
-    box-shadow:0 .2rem .8rem rgba(0,0,0,.08);
+
+    background:#0d3b66;
+
+    border-radius:1.5rem;
+
+    box-shadow:0 .8rem 2rem rgba(0,0,0,.15);
+
+    padding:1rem;
+
 }
+
+
+/* ==========================================
+   TABLE
+========================================== */
 
 .table-container table{
+
     width:100%;
+
     min-width:120rem;
+
     border-collapse:collapse;
+
+    color:#ffffff;
+
 }
+
+
+/* ==========================================
+   TABLE HEADER
+========================================== */
 
 .table-container table th{
-    background:#0d3b66;
-    color:#ffffff;
-    padding:1.4rem 1.8rem;
+
+    background:#082947;
+
+    color:#ffb703;
+
+    padding:1.6rem 2rem;
+
     text-align:left;
-    font-size:1.5rem;
-    font-weight:600;
+
+    font-size:1.6rem;
+
+    font-weight:700;
+
+    border-bottom:.2rem solid #ff7a00;
+
     white-space:nowrap;
+
 }
+
+
+/* ==========================================
+   TABLE BODY
+========================================== */
 
 .table-container table td{
-    padding:1.4rem 1.8rem;
-    border-bottom:.1rem solid #e5e5e5;
-    font-size:1.4rem;
-    vertical-align:middle;
+
+    padding:1.5rem 2rem;
+
+    font-size:1.5rem;
+
+    color:#ffffff;
+
+    border-bottom:.1rem solid rgba(255,255,255,.12);
+
 }
+
+
+/* ==========================================
+   ALTERNATE ROWS
+========================================== */
 
 .table-container table tr:nth-child(even){
-    background:#f9f9f9;
+
+    background:rgba(255,255,255,.05);
+
 }
 
-.table-container table tr:hover{
-    background:#eef5ff;
+
+/* ==========================================
+   HOVER
+========================================== */
+
+.table-container table tbody tr:hover{
+
+    background:rgba(255,122,0,.18);
+
 }
 
-.edit-btn,
-.delete-btn{
-    display:inline-block;
-    width:7rem;
-    text-align:center;
-    padding:.8rem 0;
-    border-radius:.6rem;
-    font-size:1.3rem;
-    margin:.2rem 0;
-    transition:.3s;
-}
+
+/* ==========================================
+   EDIT BUTTON
+========================================== */
 
 .edit-btn{
-    background:#0d6efd;
+
+    display:inline-block;
+
+    padding:.8rem 1.6rem;
+
+    background:#ff7a00;
+
     color:#ffffff;
+
+    text-decoration:none;
+
+    border-radius:.8rem;
+
+    font-size:1.3rem;
+
+    font-weight:600;
+
+    transition:.3s;
+
 }
 
 .edit-btn:hover{
-    background:#0b5ed7;
+
+    background:#ffffff;
+
+    color:#0d3b66;
+
 }
 
+
+/* ==========================================
+   DELETE BUTTON
+========================================== */
+
 .delete-btn{
+
+    display:inline-block;
+
+    padding:.8rem 1.6rem;
+
     background:#dc3545;
+
     color:#ffffff;
+
+    text-decoration:none;
+
+    border-radius:.8rem;
+
+    font-size:1.3rem;
+
+    font-weight:600;
+
+    transition:.3s;
+
 }
 
 .delete-btn:hover{
-    background:#bb2d3b;
+
+    background:#b02a37;
+
 }
 
+
+/* ==========================================
+   ACTION COLUMN
+========================================== */
+
 .action-column{
+
     white-space:nowrap;
+
     text-align:center;
+
+}
+
+/* ==========================
+   ADD BUTTON
+========================== */
+
+.add-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#ff7a00;
+
+    color:#ffffff;
+
+    text-decoration:none;
+
+    padding:1.2rem 2.8rem;
+
+    border-radius:1rem;
+
+    font-size:1.5rem;
+
+    font-weight:600;
+
+    white-space:nowrap;
+
+    transition:.3s;
+
+}
+
+.add-btn:hover{
+
+    background:#e66d00;
+
+    transform:translateY(-.2rem);
+
+}
+
+.add-btn:hover{
+
+    background:#e66d00;
+
+    transform:translateY(-.2rem);
+
+}
+
+/* ==========================================
+   SEARCH CONTAINER
+========================================== */
+
+.search-container{
+
+    margin:2rem 0;
+
+    display:flex;
+
+    justify-content:flex-start;
+
+}
+/* ==========================================
+   SEARCH CONTAINER
+========================================== */
+
+.search-container{
+
+    position:relative;
+
+    width:38rem;
+
+    margin:2rem 0;
+
+}
+
+
+/* ==========================================
+   SEARCH INPUT
+========================================== */
+
+.search-container input{
+
+    width:100%;
+
+    height:5rem;
+
+    padding:0 5rem 0 4.8rem;
+
+    border:.2rem solid #0d3b66;
+
+    border-radius:5rem;
+
+    outline:none;
+
+    font-size:1.5rem;
+
+    color:#0d3b66;
+
+    background:#ffffff;
+
+    transition:.3s;
+
+}
+
+.search-container input::placeholder{
+
+    color:#888888;
+
+}
+
+.search-container input:focus{
+
+    border-color:#2f9aff;
+
+    box-shadow:0 0 1rem rgba(255,122,0,.35);
+
+}
+
+
+/* ==========================================
+   SEARCH ICON
+========================================== */
+
+.search-icon{
+
+    position:absolute;
+
+    left:1.7rem;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:#0d3b66;
+
+    font-size:1.7rem;
+
+    pointer-events:none;
+
+}
+
+
+/* ==========================================
+   CLEAR BUTTON
+========================================== */
+
+.clear-search{
+
+    position:absolute;
+
+    right:1.6rem;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:2.8rem;
+
+    height:2.8rem;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#2f9aff;
+
+    color:#ffffff;
+
+    cursor:pointer;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:1.3rem;
+
+    transition:.3s;
+
+}
+
+.clear-search:hover{
+    color: #2f9aff;
+    background:#e66d00;
+
 }

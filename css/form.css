@@ -82,3 +82,87 @@
 .cancel-btn:hover{
     background:#bb2d3b;
 }
+
+/* ================================
+   SETTINGS PAGE FONT IMPROVEMENTS
+================================ */
+
+.main-content .page-title h2 {
+    font-size: 2.8rem;
+}
+
+.main-content .page-title p {
+    font-size: 1.6rem;
+    margin-top: 0.5rem;
+}
+
+.form-container h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    font-size: 1.6rem;
+    padding: 1.3rem 1.5rem;
+}
+
+.form-group select {
+    min-height: 5rem;
+}
+
+.save-btn,
+.cancel-btn {
+    font-size: 1.6rem;
+    padding: 1.2rem 2rem;
+}
+
+/* ==========================
+   PASSWORD SHOW / HIDE
+========================== */
+
+.form-group .password-box {
+    position: relative !important;
+    width: 100% !important;
+    display: block !important;
+}
+
+.form-group .password-box input {
+    width: 100% !important;
+    padding-right: 8rem !important;
+}
+
+.form-group .password-box button.password-toggle {
+    position: absolute !important;
+    top: 50% !important;
+    right: 1.5rem !important;
+    transform: translateY(-50%) !important;
+
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0.5rem !important;
+
+    border: none !important;
+    background: transparent !important;
+
+    color: #0d3b66 !important;
+    font-size: 1.4rem !important;
+    font-weight: 700 !important;
+
+    cursor: pointer !important;
+    z-index: 20 !important;
+}
+
+.form-group .password-box button.password-toggle:hover {
+    color: #ff7a00 !important;
+}
